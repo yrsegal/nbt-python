@@ -83,12 +83,12 @@ class NBTTagLongArray(NBTBase, List[int]):
     def write(self, data_stream: BinaryIO) -> None:
         self._write(data_stream, 'i', len(self))
         for i in self:
-            self._write(data_stream, 'l', i)
+            self._write(data_stream, 'q', i)
 
     @classmethod
     def read(cls, data_stream: BinaryIO, depth: int) -> 'NBTBase':
         size: int = cls._read(data_stream, 'i')
-        return NBTTagLongArray([cls._read(data_stream, 'l') for _ in range(size)])
+        return NBTTagLongArray([cls._read(data_stream, 'q') for _ in range(size)])
 
     @classmethod
     def id(cls) -> int:
