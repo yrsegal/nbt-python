@@ -1,6 +1,7 @@
 from gzip import GzipFile
 
 from nbt.classes import *
+from nbt.json import NBTReader
 
 __all__ = [
     'NBTBase',
@@ -17,6 +18,7 @@ __all__ = [
     'NBTTagCompound',
     'NBTTagIntArray',
     'NBTTagLongArray',
+    'NBTReader',
     'read',
     'read_zipped',
     'write',

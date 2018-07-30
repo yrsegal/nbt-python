@@ -81,7 +81,7 @@ class NBTTagCompound(NBTBase, Dict[str, NBTBase]):
     def copy(self) -> 'NBTBase':
         return NBTTagCompound({key: tag.copy() for (key, tag) in self})
 
-    _simple_pattern = re.compile("[A-Za-z0-9._+-]+")
+    KEY_PATTERN = re.compile("[A-Za-z0-9._+-]+")
 
     def __str__(self) -> str:
         out = "{"
@@ -89,7 +89,7 @@ class NBTTagCompound(NBTBase, Dict[str, NBTBase]):
             if len(out) != 1:
                 out += ","
 
-            if NBTTagCompound._simple_pattern.fullmatch(key):
+            if NBTTagCompound.KEY_PATTERN.fullmatch(key):
                 out += key
             else:
                 out += self._quote_escape(key)

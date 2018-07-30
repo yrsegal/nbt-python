@@ -16,5 +16,5 @@ setup(
     description="NBT loader",
     author_email="yrsegal@gmail.com",
     author="Wire Segal",
-    license="MIT License",
+    license="MIT License"
 )
