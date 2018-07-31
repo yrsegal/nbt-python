@@ -71,10 +71,10 @@ class NBTTagIntArray(NBTBase, List[int]):
 
     def __str__(self) -> str:
         out = "[I;"
-        for byte in self:
+        for integer in self:
             if len(out) != 3:
                 out += ","
-            out += str(byte) + "I"
+            out += str(integer)
         return out + "]"
 
 
@@ -99,8 +99,8 @@ class NBTTagLongArray(NBTBase, List[int]):
 
     def __str__(self) -> str:
         out = "[L;"
-        for byte in self:
+        for long in self:
             if len(out) != 3:
                 out += ","
-            out += str(byte) + "L"
+            out += str(long) + "L"
         return out + "]"
